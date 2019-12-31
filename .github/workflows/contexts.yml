@@ -14,7 +14,8 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - name: create-fruit
+      - name: Create a fruit output
+        id: create-fruit
         run: echo "::set-output name=fruit-name::strawberry"        
       - name: Dump runner context
         env:
