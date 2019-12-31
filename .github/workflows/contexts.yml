@@ -4,7 +4,7 @@ on:
   push:
     paths:
     - 'samples/context.md'
-    - '.github/workflows/go-basics.yml'
+    - '.github/workflows/contexts.yml'
 
 jobs:
   one:
