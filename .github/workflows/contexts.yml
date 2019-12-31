@@ -26,6 +26,8 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+      - name: create-fruit
+        run: echo "::set-output name=fruit-name::strawberry"
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
