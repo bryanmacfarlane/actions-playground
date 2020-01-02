@@ -36,7 +36,7 @@ jobs:
           STEPS_CONTEXT: ${{ toJson(steps) }}
         run: echo "$STEPS_CONTEXT"
       - run: |
-          echo "created fruit: ${{ steps.create-fruit.fruit-name }}"
+          echo "created fruit: ${{ steps.create-fruit.outputs.fruit-name }}"
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
