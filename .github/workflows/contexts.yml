@@ -13,10 +13,7 @@ jobs:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Create a fruit output
-        id: create-fruit
-        run: echo "::set-output name=fruit-name::strawberry"        
+        run: echo "$GITHUB_CONTEXT"        
       - name: Dump runner context
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
@@ -29,13 +26,18 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
+      - name: Dump env
+        run: env               
+      - name: Create a fruit output
+        id: create-fruit
+        run: echo "::set-output name=fruit-name::strawberry"        
       - name: Dump steps context
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT" 
-      - name: Dump env
-        run: env       
+        run: echo "$STEPS_CONTEXT"
+      - run: |
+          echo "created fruit: ${{ steps.create-fruit.fruit-name }}"
+      - name: Dump job context
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"        
