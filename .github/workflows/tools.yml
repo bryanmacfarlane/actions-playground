@@ -1,0 +1,22 @@
+name: tools
+
+on:
+  push:
+    paths:
+    - 'samples/tools.md'
+    - '.github/workflows/tools.yml'
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tool-cache
+        run: |
+          echo RUNNER_TOOL_CACHE: ${RUNNER_TOOL_CACHE}
+          echo TOOLS_DIRECTORY: ${RUNNER_TOOLSDIRECTORY}
+      - name: go
+        run: |
+          echo go installed at $(which go)
+          echo go env GOPATH: $(go env GOPATH)
+          echo go versions in tool cache: 
+          echo $(ls $RUNNER_TOOL_CACHE/go)
