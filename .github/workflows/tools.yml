@@ -31,4 +31,7 @@ jobs:
           echo go version: $(go version)
           echo go env GOPATH: $(go env GOPATH)
           echo go versions in tool cache: 
-          echo $(ls $RUNNER_TOOL_CACHE/go)        
+          echo $(ls $RUNNER_TOOL_CACHE/go) 
+      - name: path
+        shell: bash
+        run: echo PATH       
