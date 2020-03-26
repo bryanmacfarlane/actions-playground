@@ -34,4 +34,4 @@ jobs:
           echo $(ls $RUNNER_TOOL_CACHE/go) 
       - name: path
         shell: bash
-        run: echo PATH       
+        run: echo ${PATH}       
