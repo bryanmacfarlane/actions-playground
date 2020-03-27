@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           echo $(node --version) at $(which node)
-          echo cache: $(ls $RUNNER_TOOL_CACHE/go) 
+          echo cache: $(ls $RUNNER_TOOL_CACHE/node) 
       - name: setup node 12.x
         uses: actions/setup-node@v1
         with:
@@ -44,7 +44,7 @@ jobs:
         shell: bash
         run: |
           echo $(node --version) at $(which node)
-          echo cache: $(ls $RUNNER_TOOL_CACHE/go)           
+          echo cache: $(ls $RUNNER_TOOL_CACHE/node)           
       - name: path
         shell: bash
         run: echo ${PATH} 
