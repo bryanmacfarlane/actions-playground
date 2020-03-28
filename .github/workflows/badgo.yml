@@ -1,0 +1,18 @@
+name: badgo
+
+on:
+  push:
+    paths:
+    - 'badgo'
+    - '.github/workflows/badgo.yml'
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: setup-go
+        uses: actions/setup-go@matcher
+        with:
+          go-version: '^1.13.1'
+      - run: go build
+        working-directory: ./badgo
