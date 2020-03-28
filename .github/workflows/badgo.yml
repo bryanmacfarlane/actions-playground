@@ -17,4 +17,7 @@ jobs:
           go-version: '^1.13.1'
       - run: go build
         working-directory: badgo
-      - run: echo "./badgo/main.go:7:2: undefined: fmt.Printl" >&2
+      - name: error
+        shell: bash
+        run: |
+          echo "./badgo/main.go:7:2: undefined: fmt.Printl" 1>&2
