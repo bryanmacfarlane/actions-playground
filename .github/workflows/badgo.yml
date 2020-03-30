@@ -18,9 +18,11 @@ jobs:
       - name: (root) go build
         run: go build
       - name: sample error line
+        if: always()
         shell: bash
         run: |
           echo "./badgo/main.go:7:2: sample err msg" 1>&2          
       - name: ./badgo && go build
+        if: always()
         run: go build
         working-directory: badgo
