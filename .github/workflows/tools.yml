@@ -18,7 +18,6 @@ jobs:
         shell: bash
         run: |          
           echo $(go version) at $(which go)
-          echo go version: $(go version)
           echo go env: $(go env GOPATH) 
           echo cache: $(ls $RUNNER_TOOL_CACHE/go)
       - name: setup-go
