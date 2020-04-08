@@ -10,6 +10,10 @@ jobs:
   ubuntu:
     runs-on: ubuntu-18.04
     steps:
+      - name: os-info
+        shell: bash
+        run: |
+          cat /etc/lsb-release
       - name: tool-cache
         run: |
           echo RUNNER_TOOL_CACHE: ${RUNNER_TOOL_CACHE}
