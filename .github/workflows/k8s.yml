@@ -1,4 +1,4 @@
-name: contexts
+name: k8s
 
 on:
   push:
