@@ -1,6 +1,6 @@
 name: k8s
 
-# test
+# testing
 on:
   push:
     paths:
