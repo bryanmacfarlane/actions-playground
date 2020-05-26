@@ -1,0 +1,21 @@
+name: contexts
+
+on:
+  push:
+    paths:
+    - '.github/workflows/k8s.yml'
+
+jobs:
+  one:
+    runs-on: [self-hosted, k8s]
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"        
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+      - name: Dump env
+        run: env
