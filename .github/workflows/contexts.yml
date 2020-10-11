@@ -1,6 +1,7 @@
 name: contexts
 
 on:
+  workflow_dispatch:
   push:
     paths:
     - 'samples/context.md'
@@ -25,9 +26,7 @@ jobs:
       - name: Dump matrix context
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
-      - name: Dump env
-        run: env               
+        run: echo "$MATRIX_CONTEXT"               
       - name: Create a fruit output
         id: create-fruit
         run: echo "::set-output name=fruit-name::strawberry"        
@@ -40,4 +39,9 @@ jobs:
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"        
+        run: echo "$JOB_CONTEXT"
+      - name: Create a fruit output
+        id: set my-env-var
+        run: echo "::set-env name=my-env-var::my-env-value"         
+      - name: Dump env
+        run: env                
