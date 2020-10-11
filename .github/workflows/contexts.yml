@@ -48,14 +48,3 @@ jobs:
         run: echo "::add-path name=my-path::/my/path/val"        
       - name: Dump env
         run: env
-      - name: Dump var files
-        run: |
-          echo ${GITHUB_PATH}
-          echo ----------------------------------
-          cat "${GITHUB_PATH}
-          echo ""          
-          echo ${GITHUB_ENV}
-          echo ----------------------------------
-          cat "${GITHUB_ENV}
-          echo ""
-          
