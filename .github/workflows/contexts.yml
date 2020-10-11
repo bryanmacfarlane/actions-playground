@@ -40,8 +40,7 @@ jobs:
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
-      - name: Create a fruit output
-        id: set my-env-var
+      - name: set my-env-var
         run: echo "::set-env name=my-env-var::my-env-value"         
       - name: Dump env
         run: env                
