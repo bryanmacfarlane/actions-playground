@@ -56,3 +56,5 @@ jobs:
       - name: path
         shell: bash
         run: echo ${PATH} 
+      - name: Dump env
+        run: env        
