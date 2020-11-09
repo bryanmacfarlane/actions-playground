@@ -1,6 +1,7 @@
 name: tools
 
 on:
+  workflow_dispatch:
   push:
     paths:
     - 'samples/tools.md'
