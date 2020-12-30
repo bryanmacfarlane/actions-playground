@@ -2,6 +2,8 @@ name: contexts
 
 on:
   workflow_dispatch:
+  issues:
+    types: [opened, edited]  
   push:
     paths:
     - 'samples/context.md'
