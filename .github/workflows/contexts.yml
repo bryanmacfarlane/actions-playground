@@ -42,11 +42,5 @@ jobs:
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
-      - name: set my-env-var
-        run: echo "::set-env name=my-env-var::my-env-value"
-      - name: set my-env-var2
-        run: echo "::set-env name=my-env-var2::my-env-value2"
-      - name: add path
-        run: echo "::add-path name=my-path::/my/path/val"        
       - name: Dump env
         run: env
