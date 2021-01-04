@@ -6,8 +6,9 @@ on:
 
 jobs:
   issue-comment:
+    runs-on: ubuntu-18.04
     steps:
-      - run: bryanmacfarlane/issue-status-labeler@main
+      - uses: bryanmacfarlane/issue-status-labeler@main
         with:
           labels: green, yellow, red
           colors: 22a524, fbca04, b60205
