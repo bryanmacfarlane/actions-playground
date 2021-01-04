@@ -1,0 +1,11 @@
+name: issue-status-sample
+
+on:
+  issue_comment:
+    types: [created]
+
+steps:
+  - run: bryanmacfarlane/issue-status-labeler@main
+    with:
+      labels: green, yellow, red
+      colors: 22a524, fbca04, b60205
