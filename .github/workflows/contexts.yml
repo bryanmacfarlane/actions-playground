@@ -44,3 +44,5 @@ jobs:
         run: echo "$JOB_CONTEXT"
       - name: Dump env
         run: env
+      - name: Dump processes
+        run: ps aux | sort -nrk 3,3
