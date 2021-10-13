@@ -5,7 +5,7 @@ on:
 
 jobs:
   testing:
-    runs-on: [self-hosted, macos-no]
+    runs-on: [macos-not-exist]
     steps:
       - name: Dump env
         run: env        
