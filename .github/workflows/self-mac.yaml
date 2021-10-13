@@ -1,0 +1,11 @@
+name: self-mac
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testing:
+    runs-on: [self-hosted, macos]
+    steps:
+      - name: Dump env
+        run: env        
