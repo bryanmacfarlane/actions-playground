@@ -46,3 +46,4 @@ jobs:
         run: env
       - name: Dump processes
         run: ps aux | sort -nrk 3,3
+      - run: ls -R /opt/runner/
